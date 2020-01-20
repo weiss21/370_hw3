@@ -23,6 +23,10 @@ int main() {
     cout << "Enter 1 characters: ";
     cin >> word;
     
+    
+    
+    
+    
     cout << "===== All Subsets =====" << endl;
     cout << number << word << endl;
 
