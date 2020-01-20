@@ -15,21 +15,35 @@ using namespace std;
 
 int main() {
     
-    int number;
-    string word;
+    int number, i;
+    char word;
+    char *dynamArray;
     
     cout << "Number of input characters: ";
     cin >> number;
-    cout << "Enter 1 characters: ";
-    cin >> word;
     
+    dynamArray = new char[number]; //initialize dynamic array
+    cout << "Enter " << number <<  " characters: "; //ask for string input characters
+    while (i < number){
+        cin >> word;
+        dynamArray[i] = word;
+        i++;
+    }
     
     
     
     
     cout << "===== All Subsets =====" << endl;
-    cout << number << word << endl;
+    cout << "{";
+    for(int k = 0; k < number; k++){
+        cout << dynamArray[k];
+        if (k < number - 1){
+            cout << ",";
+        }
+    }
+    cout << "}";
 
+    delete[] dynamArray; //delete dynamic array
     
     return 0;
 }
