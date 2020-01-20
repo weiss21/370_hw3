@@ -7,8 +7,7 @@
  */
  
 #include <iostream>
-#include <string>
-#include <cstring>
+
 
 using namespace std;
 int recursive(int i);// so it can run. Must call before main.
