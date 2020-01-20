@@ -16,8 +16,15 @@ using namespace std;
 int main() {
     
     int number;
-    int result;
+    string word;
     
+    cout << "Number of input characters: ";
+    cin >> number;
+    cout << "Enter 1 characters: ";
+    cin >> word;
+    
+    cout << "===== All Subsets =====" << endl;
+    cout << number << word << endl;
 
     
     return 0;
