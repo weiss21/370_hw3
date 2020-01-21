@@ -8,9 +8,26 @@
  
 #include <iostream>
 #include <string>
+#include <stdio.h>
+#include <math.h>
 #include <cstring>
 
 using namespace std;
+
+void subsets(char *arr, char *sub ,int index){
+    if(index == strlen(arr)){
+        cout << "{";
+        for(int k = 0; k < strlen(sub); k++){
+            cout << sub[k];
+        }
+    cout << "}" << endl;
+    } else {
+        sub[index] = ' ';
+        subsets(arr, sub, index + 1);
+        sub[index] = arr[index];
+        subsets(arr, sub, index+1);
+    }
+}
 
 
 int main() {
@@ -29,11 +46,15 @@ int main() {
         dynamArray[i] = word;
         i++;
     }
-    
-    
+    // Use Pow subset array will be in 2^n. N being the input number.
+    int power = pow(2,number);
+    char *sequel = new char[power];
     
     
     cout << "===== All Subsets =====" << endl;
+    subsets(dynamArray, sequel ,0);
+    
+    /*
     cout << "{";
     for(int k = 0; k < number; k++){
         cout << dynamArray[k];
@@ -42,8 +63,9 @@ int main() {
         }
     }
     cout << "}";
-
+    */
     delete[] dynamArray; //delete dynamic array
+    delete[] sequel;
     
     return 0;
 }
